@@ -31,7 +31,7 @@ module Math
 
       def division(z)
         z = complexChecker(z)
-        coef = (z.imaginary**2 + z.real**2)
+        coef = (z.imaginary**2 + z.real**2).to_f
         n_real = (@imaginary * z.imaginary + @real * z.real) / coef
         n_imag = (-@real * z.imaginary + @imaginary * z.real) / coef
         Math::Complexify::Complex.new(n_real, n_imag)
@@ -71,7 +71,7 @@ module Math
 end
 
 num_1 = Math::Complexify::Complex.new(5, 8)
-num_2 = Math::Complexify::Complex.new(-5, 6)
+num_2 = Math::Complexify::Complex.new(2, 1)
 
 num_3 = num_1.addition(num_2)
 num_4 = num_1.subtraction(num_2)
