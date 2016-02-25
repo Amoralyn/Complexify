@@ -39,9 +39,11 @@ class StartApp
                    "2nd"
                  end
 
-      puts "\n Enter the real part of your #{position} complex number".yellow
+      puts "\n Enter the real part of your #{position}"\
+           " complex number".yellow
       real = gets.chomp.to_i
-      puts "\n Enter the imaginary part of your #{position} complex number".yellow
+      puts "\n Enter the imaginary part of your #{position}"\
+           " complex number".yellow
       imaginary = gets.chomp.to_i
       @result.push(Math::Complexify::Complex.new(real, imaginary))
       puts "\n Your #{position} complex number is #{@result[i]} "
@@ -67,9 +69,11 @@ class StartApp
                        "#{count}th"
                      end
 
-          puts "Enter the real part of your #{position} complex number "
+          puts "Enter the real part of your #{position}"\
+               " complex number".yellow
           real = gets.chomp.to_i
-          puts "Enter the Imaginary part of your #{position} complex number "
+          puts "Enter the Imaginary part of your #{position}"\
+               " complex number".yellow
           imaginary = gets.chomp.to_i
           @result.push(Math::Complexify::Complex.new(real, imaginary))
           puts "Your #{position} complex number is #{@result[i]} "
@@ -82,7 +86,7 @@ class StartApp
         puts "This is a Single operation".blue
         get_operation_type
       else
-        puts "You cannot have #{operand_num} operand"
+        puts "You cannot have #{operand_num} operand".red
         get_operation_type
       end
       break
@@ -120,7 +124,7 @@ class StartApp
         when "EXIT"
           break
         else
-          puts "Enter a valid Operator"
+          puts "Enter a valid Operator".red
           operation_guide
         end
       end
@@ -153,7 +157,7 @@ class StartApp
           when "EXIT"
             break
           else
-            puts "Enter a valid Operator"
+            puts "Enter a valid Operator".red
             redo
           end
         else
@@ -177,7 +181,7 @@ class StartApp
           when "EXIT"
             break
           else
-            puts "Enter a valid Operator"
+            puts "Enter a valid Operator".red
             redo
           end
         end
