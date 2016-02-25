@@ -70,16 +70,16 @@ module Math
   end
 end
 
-num_1 = Math::Complexify::Complex.new(5, 8)
-num_2 = Math::Complexify::Complex.new(2, 1)
+# num_1 = Math::Complexify::Complex.new(5, 8)
+# num_2 = Math::Complexify::Complex.new(2, 1)
 
-num_3 = num_1.addition(num_2)
-num_4 = num_1.subtraction(num_2)
-num_5 = num_1.multiplication(num_2)
-num_6 = num_1.division(num_2)
-num_7 = num_1.addition(num_3).division(num_1)
-puts num_3.class
-puts num_4
-puts num_5
-puts num_6
-puts num_7
+# num_3 = num_1.addition(num_2)
+# num_4 = num_1.subtraction(num_2)
+# num_5 = num_1.multiplication(num_2)
+# num_6 = num_1.division(num_2)
+# num_7 = num_1.addition(num_3).division(num_1)
+# puts num_3.class
+# puts num_4
+# puts num_5
+# puts num_6
+# puts num_7
