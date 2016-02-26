@@ -48,6 +48,7 @@ class StartApp
       puts "\n Enter the imaginary part of your #{position}"\
            " complex number".yellow
       imaginary = gets.chomp.to_i
+        # require "pry"; binding.pry
       @result.push(Math::Complexify::Complex.new(real, imaginary))
       puts "\n Your #{position} complex number is #{@result[i]} "
     end
@@ -110,31 +111,6 @@ class StartApp
   end
 
   def operation
-    # if n == 2
-    #   loop do
-    #     user_choice = gets.chomp.upcase
-
-    #     case user_choice
-    #     when "ADD"
-    #       puts "#{@result[0]}  +  #{@result[1]} is :\n\n"
-    #       puts @result[0].addition(@result[1])
-    #     when "SUBTRACT"
-    #       puts "#{@result[0]}  -  #{@result[1]} is :\n\n"
-    #       puts @result[0].subtraction(@result[1])
-    #     when "MULTIPLY"
-    #       puts "#{@result[0]}  *  #{@result[1]} is :\n\n"
-    #       puts @result[0].multiplication(@result[1])
-    #     when "DIVIDE"
-    #       puts "#{@result[0]}  /  #{@result[1]} is :\n\n"
-    #       puts @result[0].division(@result[1])
-    #     when "EXIT"
-    #       break
-    #     else
-    #       puts "Enter a valid Operator".red
-    #       operation_guide
-    #     end
-    #   end
-    # if n == 1 
       @result.each do |ech|
         complex_num_count = @result.index(ech)
         count = 1 + @result.index(ech)

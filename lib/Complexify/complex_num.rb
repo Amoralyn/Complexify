@@ -26,7 +26,7 @@ module Math
         z = complex_checker(z)
         n_real = (@real * z.real) - (@imaginary * z.imaginary)
         n_imag = (@real * z.imaginary) + (@imaginary * z.real)
-        Math::Complexify::Complex.new(n_real, n_imag).to_s
+        Math::Complexify::Complex.new(n_real, n_imag)
       end
 
       def division(z)
@@ -34,7 +34,7 @@ module Math
         coef = (z.imaginary**2 + z.real**2).to_f
         n_real = (@imaginary * z.imaginary + @real * z.real) / coef
         n_imag = (-@real * z.imaginary + @imaginary * z.real) / coef
-        Math::Complexify::Complex.new(n_real, n_imag).to_s
+        Math::Complexify::Complex.new(n_real, n_imag)
       end
 
       def complex_checker(z)
@@ -62,11 +62,9 @@ module Math
                  elsif @imaginary == -1
                    "#{@real} - i"
                  else
-                   # if "#{@real} - #{-1 * @imaginary}i "
                    "#{@real} - #{ -1 * @imaginary}i"
-                    # end
                  end
-        output # return the string
+        output 
       end
     end
   end
