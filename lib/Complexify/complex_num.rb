@@ -62,9 +62,9 @@ module Math
                  elsif @imaginary == -1
                    "#{@real} - i"
                  else
-                   "#{@real} - #{-1 * @imaginary}i"
+                   "#{@real} - #{ -1 * @imaginary}i"
                  end
-        output # return the string
+        output 
       end
     end
   end
