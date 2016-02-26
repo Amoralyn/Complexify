@@ -5,7 +5,7 @@ class StartApp
   def start
     puts "\n\n Welcome to Complexify!!!".green
     puts "\n\n What is Complexify ".green
-    puts "\n Complexify is a Complexify Number Library that".red
+    puts "\n Complexify is a Complex Number Library that".red
     puts "\n helps you perform basic mathematical operations".red
     puts "\n on Complex Numbers.".red
     puts "\n ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -19,14 +19,17 @@ class StartApp
 
   def get_operation_type
     puts "\n Will you be performing a Single or Multiple Operation?".green
-    puts "\n Enter 'S' for Single or 'M' for Multiple".blue
+    puts "\n Enter 'S' or 'Single' for Single or"\
+         " 'M' or 'multiple' for Multiple".blue
     op_type = gets.chomp.downcase
-    if op_type == "s"
+    if op_type == "s" || op_type == "single"
       get_copmlex_num_single
-    elsif op_type == "m"
+    elsif op_type == "m" || op_type == "multiple"
       puts "\n How many operands will you be using?".green
       get_complex_num_multiple
-
+    else
+      puts "Enter a valid option"
+      get_operation_type
     end
   end
 
@@ -45,11 +48,13 @@ class StartApp
       puts "\n Enter the imaginary part of your #{position}"\
            " complex number".yellow
       imaginary = gets.chomp.to_i
+        # require "pry"; binding.pry
       @result.push(Math::Complexify::Complex.new(real, imaginary))
       puts "\n Your #{position} complex number is #{@result[i]} "
     end
     operation_guide
-    operation(1)
+    operation
+    # operation_guide
   end
 
   def get_complex_num_multiple
@@ -91,7 +96,9 @@ class StartApp
       end
       break
     end
-    operation(2)
+    operation_guide
+    operation
+    # operation_guide
   end
 
   def operation_guide
@@ -103,40 +110,15 @@ class StartApp
     puts "** To exit, enter 'EXIT' **".blue
   end
 
-  def operation(n)
-    if n == 1
-      loop do
-        user_choice = gets.chomp.upcase
-
-        case user_choice
-        when "ADD"
-          puts "#{@result[0]}  +  #{@result[1]} is :\n\n"
-          puts @result[0].addition(@result[1])
-        when "SUBTRACT"
-          puts "#{@result[0]}  -  #{@result[1]} is :\n\n"
-          puts @result[0].subtraction(@result[1])
-        when "MULTIPLY"
-          puts "#{@result[0]}  *  #{@result[1]} is :\n\n"
-          puts @result[0].multiplication(@result[1])
-        when "DIVIDE"
-          puts "#{@result[0]}  /  #{@result[1]} is :\n\n"
-          puts @result[0].division(@result[1])
-        when "EXIT"
-          break
-        else
-          puts "Enter a valid Operator".red
-          operation_guide
-        end
-      end
-    elsif n == 2
+  def operation
       @result.each do |ech|
-        c_count = @result.index(ech)
+        complex_num_count = @result.index(ech)
         count = 1 + @result.index(ech)
         break if count >= @result.length
-        operation_guide
+        # operation_guide
         user_choice = gets.chomp.upcase
 
-        if c_count == 0 && count == 1
+        if complex_num_count == 0 && count == 1
           case user_choice
           when "ADD"
             puts "#{@result[0]}  +  #{@result[1]} is :\n\n"
@@ -159,6 +141,7 @@ class StartApp
           else
             puts "Enter a valid Operator".red
             redo
+            operation_guide
           end
         else
           case user_choice
@@ -185,7 +168,7 @@ class StartApp
             redo
           end
         end
-      end
+      # end
     end
   end
 end
