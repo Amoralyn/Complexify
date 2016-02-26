@@ -13,13 +13,13 @@ module Math
       def addition(z)
         # adds the real part of z to the real part of the calling method
         # also adds the imaginary parts and returs the result
-        Math::Complexify::Complex.new(@real + z.real, @imaginary + z.imaginary).to_s
+        Math::Complexify::Complex.new(@real + z.real, @imaginary + z.imaginary)
       end
 
       def subtraction(z)
         # adds the real part of z to the real part of the calling method
         # also adds the imaginary parts of the calling method
-        Math::Complexify::Complex.new(@real - z.real, @imaginary - z.imaginary).to_s
+        Math::Complexify::Complex.new(@real - z.real, @imaginary - z.imaginary)
       end
 
       def multiplication(z)
